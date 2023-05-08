@@ -1,0 +1,8 @@
+<h1>Result</h1>
+<% if @user["found"] == false %>
+  <p>Sorry but <%= @answer.capitalize %> does not seem to be a valid English word...</p>
+<% elsif @answer.split("").all? { |word| word.include?(@letter) } == false%>
+  <p>Sorry but <%= @answer.capitalize %> can't be built out of <%= @letter %>...</p>
+<% else%>
+  <p>Congratulations! <%= @answer.capitalize %> is a valid English word!</p>
+<% end%>
